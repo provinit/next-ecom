@@ -3,10 +3,11 @@
 
 import product from './product'
 import banner from './banner'
+import footerBanner from './footer'
 
 // export default createSchema({
 //   name: 'default',
 //   types: schemaTypes.concat([product, banner]),
 // })
 
-export const schemaTypes = [product, banner]
+export const schemaTypes = [product, banner, footerBanner]

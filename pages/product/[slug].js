@@ -10,6 +10,7 @@ import { Product } from "@/components";
 import { useStateContext } from "@/context/StateContext";
 const ProductDetails = ({ product, relatedProducts }) => {
   const { image, name, details, price } = product;
+
   const [index, setIndex] = useState(0);
   const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
   const handleBuyNow = () => {
@@ -117,7 +118,6 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params: { slug } }) => {
   const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
   const productsQuery = '*[_type == "product"]';
-
   const product = await client.fetch(query);
   const relatedProducts = await client.fetch(productsQuery);
 
